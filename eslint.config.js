@@ -45,5 +45,13 @@ export default ts.config(
 				svelteConfig
 			}
 		}
+	},
+	// Replace rule from strictTypeChecked with Svelte rule
+	{
+		files: ['**/*.svelte'],
+		rules: {
+			'prefer-const': 'off',
+			'svelte/prefer-const': 'error'
+		}
 	}
 );
