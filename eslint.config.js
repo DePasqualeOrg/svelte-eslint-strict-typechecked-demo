@@ -28,7 +28,7 @@ export default ts.config(
 	},
 	{
 		files: ['**/*.ts', '**/*.svelte'],
-		extends: [...ts.configs.strictTypeChecked],
+		extends: [...ts.configs.strictTypeChecked.slice(1)], // Omitting the base config (first item) resolves the parsing errors
 		languageOptions: {
 			parserOptions: {
 				project: ['./tsconfig.json']
