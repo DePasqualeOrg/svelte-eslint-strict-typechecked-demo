@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	const emptyString = '';
+
+	// This results in an error due to @typescript-eslint/no-unnecessary-condition
+	if (emptyString) {
+		console.log('test');
+	}
+</script>
+
+<!-- This does not result in an error -->
+{#if emptyString}
+	<p>test</p>
+{/if}

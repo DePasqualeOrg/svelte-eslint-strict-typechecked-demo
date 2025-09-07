@@ -27,6 +27,15 @@ export default ts.config(
 		}
 	},
 	{
+		files: ['**/*.ts', '**/*.svelte'],
+		extends: [...ts.configs.strictTypeChecked],
+		languageOptions: {
+			parserOptions: {
+				project: ['./tsconfig.json']
+			}
+		}
+	},
+	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parserOptions: {
